@@ -23,9 +23,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   setup(_options, _nuxt) {
     if (!_options.secret) {
-      throw new Error(
-        'JWT secret is required. Please provide it in the module options or through environment variables.',
-      )
+      console.log('JWT secret is required. Please provide it in the module options or through environment variables.')
     }
     const resolver = createResolver(import.meta.url)
 
