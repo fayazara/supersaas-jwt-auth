@@ -1,0 +1,7 @@
+{
+  "extends": "./.nuxt/tsconfig.json",
+  "exclude": ["playground", "src/module/runtime/server", "dist"],
+  "compilerOptions": {
+    "module": "esnext"
+  }
+}
