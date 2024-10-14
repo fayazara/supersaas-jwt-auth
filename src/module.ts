@@ -19,7 +19,7 @@ export default defineNuxtModule<ModuleOptions>({
     secret: '',
     expirationTime: '7d',
     excludeRoutes: [],
-    includeRoutes: [],
+    includeRoutes: ['/api/**'],
   },
   setup(_options, _nuxt) {
     if (!_options.secret) {
@@ -34,6 +34,13 @@ export default defineNuxtModule<ModuleOptions>({
       excludeRoutes: _options.excludeRoutes,
       includeRoutes: _options.includeRoutes,
     })
+
+    // Add route rules for JWT authentication
+    for (const route of _options.includeRoutes) {
+      _nuxt.options.nitro.routeRules = defu(_nuxt.options.nitro.routeRules, {
+        [route]: { 'supersaas-jwt-auth': true },
+      })
+    }
 
     addServerHandler({
       handler: resolver.resolve('./runtime/server/middleware/jwtAuth'),

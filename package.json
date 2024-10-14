@@ -2,7 +2,7 @@
   "name": "supersaas-jwt-auth",
   "version": "1.0.0",
   "description": "JWT Auth for Supersaas Projects",
-  "repository": "SupersaasHQ/supersaas-jwt-auth",
+  "repository": "fayazara/supersaas-jwt-auth",
   "license": "MIT",
   "type": "module",
   "exports": {
