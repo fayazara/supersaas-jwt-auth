@@ -36,7 +36,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     addServerHandler({
-      handler: resolver.resolve('./runtime/server/middleware/auth'),
+      handler: resolver.resolve('./runtime/server/middleware/jwtAuth'),
     })
   },
 })
