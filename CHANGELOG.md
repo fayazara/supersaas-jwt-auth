@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.0.4
+
+[compare changes](https://github.com/fayazara/supersaas-jwt-auth/compare/v1.0.3...v1.0.4)
+
+### 🏡 Chore
+
+- Add server scanning and auto imports ([5172b13](https://github.com/fayazara/supersaas-jwt-auth/commit/5172b13))
+
+### ❤️ Contributors
+
+- Fayaz Ahmed ([@fayazara](http://github.com/fayazara))
+
 ## v1.0.3
 
 [compare changes](https://github.com/fayazara/supersaas-jwt-auth/compare/v1.0.2...v1.0.3)
