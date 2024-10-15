@@ -1,4 +1,4 @@
-import { defineNuxtModule, createResolver, addServerHandler, addImports } from '@nuxt/kit'
+import { defineNuxtModule, createResolver, addServerHandler, addServerImportsDir, addServerScanDir } from '@nuxt/kit'
 import { defu } from 'defu'
 
 // Module options TypeScript interface definition
@@ -41,24 +41,10 @@ export default defineNuxtModule<ModuleOptions>({
         [route]: { 'supersaas-jwt-auth': true },
       })
     }
-
-    const utilities = [
-      {
-        name: 'generateJwtToken',
-        from: '../src/runtime/server/utils/jwt-auth',
-      },
-      {
-        name: 'verifyJwtToken',
-        from: '../src/runtime/server/utils/jwt-auth',
-      },
-    ]
-
-    utilities.forEach((utility) => {
-      addImports(utility)
-    })
-
     addServerHandler({
       handler: resolver.resolve('./runtime/server/middleware/jwtAuth'),
     })
+    addServerImportsDir(resolver.resolve('./runtime/server/utils'))
+    addServerScanDir(resolver.resolve('./runtime/server'))
   },
 })
